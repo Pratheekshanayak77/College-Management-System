@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Management System</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>🎓 College Management System</h2>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to College Management Portal</h1>
+        <p>Manage Students, Courses, Faculty and Attendance Efficiently</p>
+    </div>
+</section>
+
+<div class="cards">
+
+    <div class="card">
+        <h2>👨‍🎓 Students</h2>
+        <p>Manage Student Information</p>
+    </div>
+
+    <div class="card">
+        <h2>👩‍🏫 Faculty</h2>
+        <p>Faculty Records</p>
+    </div>
+
+    <div class="card">
+        <h2>📚 Courses</h2>
+        <p>Course Details</p>
+    </div>
+
+    <div class="card">
+        <h2>📊 Attendance</h2>
+        <p>Attendance Tracking</p>
+    </div>
+
+</div>
+
+<div class="form-container">
+
+<h2>Add Student</h2>
+
+<form action="/add" method="post">
+
+<input type="text" name="sid" placeholder="Student ID" required>
+
+<input type="text" name="name" placeholder="Student Name" required>
+
+<input type="text" name="dept" placeholder="Department ID" required>
+
+<input type="text" name="year" placeholder="Year" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="submit" value="Add Student">
+
+</form>
+
+</div>
+
+<div class="table-container">
+
+<h2>Student Records</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Year</th>
+<th>Email</th>
+</tr>
+
+{% for s in students %}
+<tr>
+<td>{{ s[0] }}</td>
+<td>{{ s[1] }}</td>
+<td>{{ s[2] }}</td>
+<td>{{ s[3] }}</td>
+<td>{{ s[4] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+<footer>
+    <p>© 2026 College Management System</p>
+</footer>
+
+</body>
+</html>

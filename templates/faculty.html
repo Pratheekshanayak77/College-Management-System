@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="main">
+
+    <div class="header">
+        <h1>👩‍🏫 Faculty Management</h1>
+        <p>View all faculty records</p>
+    </div>
+
+    <div class="table-box">
+
+        <h2>Faculty Records</h2>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Designation</th>
+            </tr>
+
+            {% for f in faculty %}
+            <tr>
+                <td>{{ f[0] }}</td>
+                <td>{{ f[1] }}</td>
+                <td>{{ f[2] }}</td>
+                <td>{{ f[3] }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <br>
+
+        <a href="/" class="back-btn">⬅ Back to Dashboard</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

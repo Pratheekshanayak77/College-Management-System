@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="main">
+
+    <div class="header">
+        <h1>📚 Course Management</h1>
+        <p>View all course records</p>
+    </div>
+
+    <div class="table-box">
+
+        <h2>Course Records</h2>
+
+        <table>
+
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Department</th>
+            </tr>
+
+            {% for c in courses %}
+            <tr>
+                <td>{{ c[0] }}</td>
+                <td>{{ c[1] }}</td>
+                <td>{{ c[2] }}</td>
+                <td>{{ c[3] }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <br>
+
+        <a href="/" class="back-btn">⬅ Back to Dashboard</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

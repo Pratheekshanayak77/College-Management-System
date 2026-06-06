@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Management Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        🎓 CMS
+    </div>
+
+    <ul>
+        <li><a href="/">🏠 Dashboard</a></li>
+        <li><a href="/students">👨‍🎓 Students</a></li>
+        <li><a href="/faculty">👩‍🏫 Faculty</a></li>
+        <li><a href="/courses">📚 Courses</a></li>
+    </ul>
+
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h1>College Management Dashboard</h1>
+        <p>Manage Students, Faculty, Courses and Attendance</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card students">
+            <h2>👨‍🎓 Students</h2>
+            <h1>{{ student_count }}</h1>
+        </div>
+
+        <div class="card faculty">
+            <h2>👩‍🏫 Faculty</h2>
+            <h1>{{ faculty_count }}</h1>
+        </div>
+
+        <div class="card courses">
+            <h2>📚 Courses</h2>
+            <h1>{{ course_count }}</h1>
+        </div>
+
+        <div class="card attendance">
+            <h2>📊 Attendance</h2>
+            <h1>{{ attendance }}%</h1>
+        </div>
+
+    </div>
+
+    <div class="form-box">
+
+        <h2>Add Student</h2>
+
+        <form action="/add" method="post">
+
+            <input type="text" name="sid" placeholder="Student ID" required>
+
+            <input type="text" name="name" placeholder="Student Name" required>
+
+            <input type="text" name="dept" placeholder="Department ID" required>
+
+            <input type="text" name="year" placeholder="Year" required>
+
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <button type="submit">Add Student</button>
+
+        </form>
+
+    </div>
+
+    <div class="table-box">
+
+        <h2>Student Records</h2>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Year</th>
+                <th>Email</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+
+            {% for s in students %}
+            
+            <tr>
+                <td>{{ s[0] }}</td>
+                <td>{{ s[1] }}</td>
+                <td>{{ s[2] }}</td>
+                <td>{{ s[3] }}</td>
+                <td>{{ s[4] }}</td>
+                <td>
+                   <a href="/delete/{{ s[0] }}" class="delete-btn">
+                      Delete
+                   </a>
+                </td>
+                <td>
+                  <a href="/update/{{ s[0] }}" class="update-btn">
+                      Update
+                   </a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
