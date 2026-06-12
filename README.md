@@ -1,89 +1,108 @@
-College Management System (DBMS Project)
-Project Overview
+# College Management System 
 
-The College Management System is a database-driven web application designed to manage college operations such as student records, faculty details, courses, departments, enrollment, and attendance. The system demonstrates CRUD operations, stored procedures, and triggers using a structured database.
+## Project Overview
 
-Database Tables
-Student
-student_id
-name
-department_id
-year
-email
-Faculty
-faculty_id
-name
-department_id
-designation
-Department
-department_id
-department_name
-Course
-course_id
-course_name
-credits
-department_id
-Enrollment
-enrollment_id
-student_id
-course_id
-semester
-grade
-Attendance
-attendance_id
-student_id
-course_id
-attendance_percentage
-Functional Requirements (Frontend Demonstration)
-Insert Operation
+This is a database-driven College Management System used to manage student, faculty, course, department, enrollment, and attendance data.
 
-Add new student, faculty, course, department, enrollment, and attendance records.
+---
 
-Update Operation
+## Database Tables
 
-Modify existing records such as student details, faculty data, grades, and attendance.
+### Student Table
+**student_id**  
+**name**  
+**department_id**  
+**year**  
+**email**
 
-Delete Operation
+---
 
-Remove student, faculty, or course records from the system.
+### Faculty Table
+**faculty_id**  
+**name**  
+**department_id**  
+**designation**
 
-Display Records
+---
 
-View all stored data in tabular format for each module.
+### Department Table
+**department_id**  
+**department_name**
 
-Stored Procedure Execution
+---
 
-Execute predefined SQL stored procedures for efficient database operations.
+### Course Table
+**course_id**  
+**course_name**  
+**credits**  
+**department_id**
 
-Trigger Demonstration Scenario
+---
 
-Automatic actions triggered on database events such as logging updates when student data is modified.
+### Enrollment Table
+**enrollment_id**  
+**student_id**  
+**course_id**  
+**semester**  
+**grade**
 
-Technologies Used
-Python (Flask / Backend)
-HTML (Frontend)
-CSS (Styling)
-MySQL (Database)
-SQL (Queries, Stored Procedures, Triggers)
-Git & GitHub (Version Control)
-Project Modules
-Student Module
-Faculty Module
-Department Module
-Course Module
-Enrollment Module
-Attendance Module
-How to Run the Project
-Clone the repository
-git clone https://github.com/your-username/College-Management-System.git
-Navigate to project folder
-cd College-Management-System
-Install dependencies (if Flask is used)
-pip install flask
-Run the application
-python app.py
-Open browser
-http://127.0.0.1:5000/
-Conclusion
+---
 
-This project demonstrates a complete DBMS-based College Management System implementing real-world database operations such as CRUD, stored procedures, and triggers along with a simple web interface.
+### Attendance Table
+**attendance_id**  
+**student_id**  
+**course_id**  
+**attendance_percentage**
+
+---
+
+## Functional Requirements
+
+### Insert Operation
+Add new records for student, faculty, course, department, enrollment, and attendance.
+
+### Update Operation
+Modify existing records in all modules.
+
+### Delete Operation
+Remove unwanted records from the system.
+
+### Display Records
+View all stored records in tabular format.
+
+### Stored Procedure
+Execute SQL stored procedures for database operations.
+
+### Trigger
+Automatic execution on database events like update logging.
+
+---
+
+## Technologies Used
+- Python (Flask)
+- HTML
+- CSS
+- MySQL
+- SQL (Stored Procedures, Triggers)
+- Git & GitHub
+
+---
+
+## Project Modules
+- Student Module  
+- Faculty Module  
+- Department Module  
+- Course Module  
+- Enrollment Module  
+- Attendance Module  
+
+---
+
+## Conclusion
+
+The College Management System is a database-driven web application designed to simplify and automate the management of college operations. It effectively handles key academic and administrative tasks such as student management, faculty records, course details, department organization, enrollment tracking, and attendance monitoring.
+
+This project demonstrates the practical implementation of important DBMS concepts including CRUD operations (Insert, Update, Delete, Display), stored procedures, and triggers. These features ensure efficient data handling, reduced manual effort, and improved accuracy in record management.
+
+By developing this system, we gain hands-on experience in integrating frontend technologies like HTML and CSS with backend programming using Python Flask, along with database management using MySQL. It also helps in understanding how real-world applications are structured and how data flows between the user interface and the database.
+
