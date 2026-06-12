@@ -90,8 +90,7 @@
                 <th>Department</th>
                 <th>Year</th>
                 <th>Email</th>
-                <th>Delete</th>
-                <th>Update</th>
+                <th>Actions</th>
             </tr>
 
             {% for s in students %}
@@ -103,15 +102,22 @@
                 <td>{{ s[3] }}</td>
                 <td>{{ s[4] }}</td>
                 <td>
-                   <a href="/delete/{{ s[0] }}" class="delete-btn">
-                      Delete
-                   </a>
-                </td>
-                <td>
-                  <a href="/update/{{ s[0] }}" class="update-btn">
-                      Update
-                   </a>
-                </td>
+    <div class="actions">
+
+
+    <a href="/update/{{ s[0] }}" class="update-btn">
+        Update
+    </a>
+
+    <a href="/delete/{{ s[0] }}" class="delete-btn">
+        Delete
+    </a>
+
+</div>
+
+
+</td>
+
             </tr>
             {% endfor %}
 

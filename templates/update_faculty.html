@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Update Faculty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="main">
+
+```
+<div class="header">
+    <h1>👩‍🏫 Update Faculty Details</h1>
+    <p>Edit Faculty Information</p>
+</div>
+
+<div class="form-box">
+
+    <form method="POST">
+
+        <label>Faculty Name</label>
+        <input type="text" name="name" value="{{ faculty[1] }}" required>
+
+        <label>Department ID</label>
+        <input type="number" name="department_id" value="{{ faculty[2] }}" required>
+
+        <label>Designation</label>
+        <input type="text" name="designation" value="{{ faculty[3] }}" required>
+
+        <button type="submit">Update Faculty</button>
+
+    </form>
+
+    <br>
+
+    <a href="/faculty" class="back-btn">⬅ Back</a>
+
+</div>
+```
+
+</div>
+
+</body>
+</html>

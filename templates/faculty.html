@@ -9,40 +9,81 @@
 
 <div class="main">
 
-    <div class="header">
-        <h1>👩‍🏫 Faculty Management</h1>
-        <p>View all faculty records</p>
-    </div>
+    
+    <!DOCTYPE html>
 
-    <div class="table-box">
+<html>
+<head>
+    <title>Faculty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
-        <h2>Faculty Records</h2>
+<div class="main">
 
-        <table>
+```
+<div class="header">
+    <h1>👩‍🏫 Faculty Management</h1>
+    <p>View all faculty records</p>
+</div>
 
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Department</th>
-                <th>Designation</th>
-            </tr>
+<div class="table-box">
 
-            {% for f in faculty %}
-            <tr>
-                <td>{{ f[0] }}</td>
-                <td>{{ f[1] }}</td>
-                <td>{{ f[2] }}</td>
-                <td>{{ f[3] }}</td>
-            </tr>
-            {% endfor %}
+    <h2>Faculty Records</h2>
 
-        </table>
+    <table>
 
-        <br>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Actions</th>
+        </tr>
 
-        <a href="/" class="back-btn">⬅ Back to Dashboard</a>
+        {% for f in faculty %}
+        <tr>
+            <td>{{ f[0] }}</td>
+            <td>{{ f[1] }}</td>
+            <td>{{ f[2] }}</td>
+            <td>{{ f[3] }}</td>
 
-    </div>
+            <td>
+
+                <a
+                href="/update_faculty/{{ f[0] }}"
+                class="update-btn"
+                onclick="alert('Faculty Updated Successfully')">
+                Update
+                </a>
+
+                <a
+                href="/delete_faculty/{{ f[0] }}"
+                class="delete-btn"
+                onclick="return confirm('Delete this faculty record?')">
+                Delete
+                </a>
+
+            </td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/" class="back-btn">⬅ Back to Dashboard</a>
+
+</div>
+```
+
+</div>
+
+</body>
+</html>
+
 
 </div>
 
